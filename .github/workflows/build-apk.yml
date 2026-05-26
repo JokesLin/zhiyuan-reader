@@ -30,11 +30,11 @@ jobs:
       - name: Build Web App
         run: npm run web:build
 
-      - name: Setup Java 17
+      - name: Setup Java 21
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
@@ -48,9 +48,23 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleDebug
 
-      - name: Upload APK
+      - name: 生成版本号
+        id: version
+        run: echo "tag=v$(date '+%Y%m%d').${{ github.run_number }}" >> $GITHUB_OUTPUT
+
+      - name: Upload APK to Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ZhiyuanReader-APK
           path: android/app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+
+      - name: 创建 Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: 致远阅读 ${{ steps.version.outputs.tag }}
+          body: |
+            自动构建 APK 安装包。
+          files: android/app/build/outputs/apk/debug/*.apk
+          generate_release_notes: true

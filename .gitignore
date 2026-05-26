@@ -1,0 +1,28 @@
+node_modules/
+dist/
+.expo/
+*.tsbuildinfo
+.DS_Store
+*.log
+*.local
+*.orig
+*.swp
+
+# React Native
+apps/mobile/android/app/build/
+apps/mobile/android/.gradle/
+apps/mobile/ios/Pods/
+apps/mobile/ios/build/
+apps/mobile/.metro-health-check*
+
+# Capacitor Android
+android/app/build/
+android/.gradle/
+android/captures/
+android/local.properties
+android/build/
+
+# IDE
+.vscode/
+.idea/
+*.iml

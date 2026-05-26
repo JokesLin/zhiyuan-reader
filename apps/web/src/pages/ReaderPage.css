@@ -1,0 +1,270 @@
+.reader-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  gap: 12px;
+  color: var(--color-text-secondary);
+}
+
+.back-link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.reader {
+  min-height: 100dvh;
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.reader.theme-light {
+  background: #fff;
+  color: #1a202c;
+}
+
+.reader.theme-green {
+  background: #c7edcc;
+  color: #2d3748;
+}
+
+.reader.theme-paper {
+  background: #f5e6d3;
+  color: #5d4e37;
+}
+
+.reader.theme-dark {
+  background: #1a1a2e;
+  color: #e2e8f0;
+}
+
+.reader-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+  background: inherit;
+}
+
+.reader-back {
+  font-size: 15px;
+  color: var(--color-primary);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.reader-title {
+  flex: 1;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reader-progress {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.reader-toc-btn {
+  font-size: 18px;
+  color: var(--color-primary);
+  padding: 4px;
+  cursor: pointer;
+}
+
+.reader-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 20px 120px;
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.chapter-title {
+  font-size: 1.25em;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.chapter-text {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: inherit;
+  font-size: inherit;
+}
+
+.reader-footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 768px;
+  display: flex;
+  gap: 1px;
+  background: var(--color-border);
+  z-index: 30;
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 14px 8px;
+  font-size: 14px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.nav-btn:hover {
+  background: var(--color-bg-secondary);
+}
+
+.nav-btn--disabled {
+  color: var(--color-text-secondary);
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.center-btn {
+  font-weight: 600;
+}
+
+.center-btn--active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.toc-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 40;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toc-panel {
+  width: 80%;
+  max-width: 340px;
+  height: 100%;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.toc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.toc-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.toc-close {
+  font-size: 24px;
+  color: var(--color-text-secondary);
+  padding: 4px;
+  cursor: pointer;
+}
+
+.toc-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.toc-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.toc-item:hover {
+  background: var(--color-bg-secondary);
+}
+
+.toc-item--active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.toc-index {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  min-width: 28px;
+}
+
+.toc-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.toc-current {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--color-primary);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.theme-dark .toc-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.theme-dark .toc-panel {
+  background: #1a1a2e;
+}
+
+.theme-dark .reader-footer {
+  background: #2d3748;
+}
+
+.theme-dark .nav-btn {
+  background: #1a1a2e;
+  color: #e2e8f0;
+}
+
+.theme-dark .center-btn--active {
+  background: rgba(43, 108, 176, 0.3);
+}
+
+.theme-dark .toc-item--active {
+  background: rgba(43, 108, 176, 0.3);
+}

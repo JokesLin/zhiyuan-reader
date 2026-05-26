@@ -1,0 +1,125 @@
+.settings-page {
+  padding: 16px;
+}
+
+.setting-group {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.setting-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--color-text);
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.slider {
+  flex: 1;
+  accent-color: var(--color-primary);
+  height: 4px;
+}
+
+.setting-value {
+  display: block;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+.font-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.font-option {
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-secondary);
+  font-size: 14px;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+
+.font-option--active {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.theme-options {
+  display: flex;
+  gap: 12px;
+}
+
+.theme-option {
+  flex: 1;
+  aspect-ratio: 3 / 2;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: border-color 0.15s;
+  cursor: pointer;
+}
+
+.theme-option--active {
+  border-color: var(--color-primary);
+}
+
+.theme-dot {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.theme-label {
+  font-size: 11px;
+}
+
+.page-mode-options {
+  display: flex;
+  gap: 12px;
+}
+
+.page-mode-option {
+  flex: 1;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-secondary);
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+
+.page-mode-option--active {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.settings-footer {
+  padding: 24px 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 12px;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  text-align: center;
+  color: var(--color-primary);
+  width: 100%;
+}

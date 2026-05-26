@@ -1,0 +1,31 @@
+{
+  "name": "zhiyuan-reader",
+  "version": "1.0.0",
+  "private": true,
+  "description": "致远阅读 - 开源跨平台小说阅读应用",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "web:dev": "npm run dev -w apps/web",
+    "web:build": "npm run build -w apps/web",
+    "web:preview": "npm run preview -w apps/web",
+    "mobile:start": "npm run start -w apps/mobile",
+    "mobile:android": "npm run android -w apps/mobile",
+    "mobile:ios": "npm run ios -w apps/mobile",
+    "core:build": "npm run build -w packages/core",
+    "lint": "npm run lint -w apps/web",
+    "format": "prettier --write \"**/*.{ts,tsx,json,css}\"",
+    "cap:sync": "npx cap sync",
+    "cap:build": "npm run web:build && npx cap copy && npx cap sync",
+    "cap:open": "npx cap open android"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4",
+    "prettier": "^3.4.0",
+    "typescript": "^5.6.0"
+  }
+}

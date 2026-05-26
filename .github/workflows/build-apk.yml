@@ -65,9 +65,9 @@ jobs:
       - name: 创建 Release
         uses: softprops/action-gh-release@v2
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ steps.version.outputs.tag }}
           name: 致远阅读 ${{ steps.version.outputs.tag }}
           body: |
             自动构建 APK 安装包。
           files: android/app/build/outputs/apk/debug/*.apk
-          generate_release_notes: true
